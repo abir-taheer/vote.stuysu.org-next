@@ -5,6 +5,14 @@ import resolvers from "../../graphql/resolvers";
 const apolloServer = new ApolloServer({
 	typeDefs,
 	resolvers,
+	playground: {
+		settings: {
+			"schema.polling.enable": false,
+			"request.credentials": 'same-origin',
+			"prettier.useTabs": true,
+		}
+	},
+	introspection: true
 });
 
 export const config = {
@@ -15,4 +23,5 @@ export const config = {
 
 export default apolloServer.createHandler({
 	path: "/api/graphql",
+	disableHealthCheck: true,
 });
