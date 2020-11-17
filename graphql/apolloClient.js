@@ -1,6 +1,5 @@
 import { useMemo } from 'react'
 import { ApolloClient, HttpLink, InMemoryCache } from '@apollo/client'
-import { concatPagination } from '@apollo/client/utilities'
 import merge from 'deepmerge'
 
 let apolloClient
@@ -12,15 +11,7 @@ function createApolloClient() {
 			uri: `https://next-vote.stuysu.org`, // Server URL (must be absolute)
 			credentials: 'same-origin', // Additional fetch() options like `credentials` or `headers`
 		}),
-		cache: new InMemoryCache({
-			typePolicies: {
-				Query: {
-					fields: {
-						allPosts: concatPagination(),
-					},
-				},
-			},
-		}),
+		cache: new InMemoryCache(),
 	})
 }
 

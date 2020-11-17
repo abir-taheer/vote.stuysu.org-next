@@ -1,6 +1,12 @@
 import { ApolloServer } from "apollo-server-micro";
 import typeDefs from "../../graphql/typeDefs";
 import resolvers from "../../graphql/resolvers";
+import mongoose from "mongoose";
+
+mongoose.connect(process.env.MONGO_URL, {
+	useUnifiedTopology: true,
+	useNewUrlParser: true,
+});
 
 const apolloServer = new ApolloServer({
 	typeDefs,
@@ -8,11 +14,11 @@ const apolloServer = new ApolloServer({
 	playground: {
 		settings: {
 			"schema.polling.enable": false,
-			"request.credentials": 'same-origin',
+			"request.credentials": "same-origin",
 			"prettier.useTabs": true,
-		}
+		},
 	},
-	introspection: true
+	introspection: true,
 });
 
 export const config = {

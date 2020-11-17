@@ -6,5 +6,8 @@ export default gql`
 		firstName: String
 		lastName: String
 		email: String
+		gradYear: Int
+		adminRoles: [String]
+		votedIn: [String]
 	}
 `;
