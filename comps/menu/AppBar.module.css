@@ -1,0 +1,16 @@
+.menuButton {
+	margin-right: 1rem;
+}
+
+.title {
+	flex-grow: 1;
+}
+
+.root {
+	flex-grow: 1;
+}
+
+.appBar {
+	background-color: white;
+	color: black;
+}

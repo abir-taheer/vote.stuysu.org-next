@@ -1,12 +1,6 @@
 import { ApolloServer } from "apollo-server-micro";
 import typeDefs from "../../graphql/typeDefs";
 import resolvers from "../../graphql/resolvers";
-import mongoose from "mongoose";
-
-mongoose.connect(process.env.MONGO_URL, {
-	useUnifiedTopology: true,
-	useNewUrlParser: true,
-});
 
 const apolloServer = new ApolloServer({
 	typeDefs,
