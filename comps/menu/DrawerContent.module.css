@@ -1,0 +1,28 @@
+.contentContainer {
+	padding: 0.5rem;
+	width: 100%;
+	min-width: 256px;
+	position: relative;
+}
+
+@media (min-width: 800px) {
+	.contentContainer {
+		height: calc(100vh - 48px);
+		overflow: auto;
+		scrollbar-width: thin;
+	}
+}
+
+.logo {
+	width: 100px;
+	height: 100px;
+	margin-top: 0.5rem;
+}
+
+.menuItem {
+	border-radius: 10px;
+}
+
+.heading {
+	padding: 1rem;
+}

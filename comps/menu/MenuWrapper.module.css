@@ -1,0 +1,21 @@
+.contentRoot {
+	display: block;
+}
+
+@media (min-width: 800px) {
+	.menuContainer {
+		width: 256px;
+		display: flex;
+		position: fixed;
+		padding-top: 48px;
+	}
+
+	.contentContainer {
+		margin-left: 256px;
+		display: inline-block;
+	}
+}
+
+.contentContainer {
+	padding: 0 0.5rem;
+}

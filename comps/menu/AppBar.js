@@ -6,16 +6,24 @@ import Button from "@material-ui/core/Button";
 import { Menu as MenuIcon } from "@material-ui/icons";
 import styles from "./AppBar.module.css";
 import TopAppBar from "@material-ui/core/AppBar";
+import useHasScrolled from "../../hooks/useHasScrolled";
 
-function AppBar() {
+function AppBar({ setDrawerOpen }) {
+	const hasScrolled = useHasScrolled();
+
 	return (
-		<TopAppBar position="sticky" className={styles.appBar}>
+		<TopAppBar
+			position="fixed"
+			className={styles.appBar}
+			elevation={hasScrolled ? 4 : 0}
+		>
 			<Toolbar>
 				<IconButton
 					edge="start"
 					className={styles.menuButton}
 					color="inherit"
 					aria-label="menu"
+					onClick={() => setDrawerOpen(current => !current)}
 				>
 					<MenuIcon />
 				</IconButton>

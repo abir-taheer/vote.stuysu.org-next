@@ -1,12 +1,14 @@
 import "../styles/globals.css";
-import AppBar from "../comps/menu/AppBar";
 import { StylesProvider } from "@material-ui/core/styles";
+import MenuWrapper from "../comps/menu/MenuWrapper";
+
 function MyApp({ Component, pageProps }) {
 	return (
 		<>
 			<StylesProvider injectFirst>
-				<AppBar />
-				<Component {...pageProps} />
+				<MenuWrapper>
+					<Component {...pageProps} />
+				</MenuWrapper>
 			</StylesProvider>
 		</>
 	);

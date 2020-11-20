@@ -4,6 +4,7 @@
 
 .title {
 	flex-grow: 1;
+	font-family: "Sumana", serif;
 }
 
 .root {
