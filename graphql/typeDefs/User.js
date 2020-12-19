@@ -8,6 +8,5 @@ export default gql`
     email: String
     gradYear: Int
     adminRoles: [String]
-    votedIn: [String]
   }
 `;
