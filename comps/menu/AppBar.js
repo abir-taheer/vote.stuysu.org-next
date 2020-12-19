@@ -9,30 +9,30 @@ import TopAppBar from "@material-ui/core/AppBar";
 import useHasScrolled from "../../hooks/useHasScrolled";
 
 function AppBar({ setDrawerOpen }) {
-	const hasScrolled = useHasScrolled();
+  const hasScrolled = useHasScrolled();
 
-	return (
-		<TopAppBar
-			position="fixed"
-			className={styles.appBar}
-			elevation={hasScrolled ? 4 : 0}
-		>
-			<Toolbar>
-				<IconButton
-					edge="start"
-					className={styles.menuButton}
-					color="inherit"
-					aria-label="menu"
-					onClick={() => setDrawerOpen(current => !current)}
-				>
-					<MenuIcon />
-				</IconButton>
-				<Typography variant="h6" className={styles.title}>
-					Board of Elections
-				</Typography>
-				<Button color="inherit">Login</Button>
-			</Toolbar>
-		</TopAppBar>
-	);
+  return (
+    <TopAppBar
+      position="fixed"
+      className={styles.appBar}
+      elevation={hasScrolled ? 4 : 0}
+    >
+      <Toolbar>
+        <IconButton
+          edge="start"
+          className={styles.menuButton}
+          color="inherit"
+          aria-label="menu"
+          onClick={() => setDrawerOpen(current => !current)}
+        >
+          <MenuIcon />
+        </IconButton>
+        <Typography variant="h6" className={styles.title}>
+          Board of Elections
+        </Typography>
+        <Button color="inherit">Login</Button>
+      </Toolbar>
+    </TopAppBar>
+  );
 }
 export default AppBar;

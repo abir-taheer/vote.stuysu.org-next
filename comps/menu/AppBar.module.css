@@ -1,17 +1,17 @@
 .menuButton {
-	margin-right: 1rem;
+  margin-right: 1rem;
 }
 
 .title {
-	flex-grow: 1;
-	font-family: "Sumana", serif;
+  flex-grow: 1;
+  font-family: "Sumana", serif;
 }
 
 .root {
-	flex-grow: 1;
+  flex-grow: 1;
 }
 
 .appBar {
-	background-color: white;
-	color: black;
+  background-color: white;
+  color: black;
 }
