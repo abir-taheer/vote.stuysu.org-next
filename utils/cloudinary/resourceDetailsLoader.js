@@ -18,6 +18,6 @@ async function batchLoader(publicIds) {
   return publicIds.map(id => publicIdMap[id] || null);
 }
 
-const resourceDetailsLoader = new DataLoader(batchLoader);
+const resourceDetailsLoader = new DataLoader(batchLoader, {cache: false});
 
 export default resourceDetailsLoader;
