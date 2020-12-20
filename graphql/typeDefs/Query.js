@@ -2,7 +2,9 @@ import { gql } from "apollo-server-micro";
 
 export default gql`
   type Query {
-    user(id: ObjectId!): User
-    election(id: ObjectId): Election
+    userById(id: ObjectId!): User
+
+    electionById(id: ObjectId!): Election
+    electionByUrl(url: String!): Election
   }
 `;
