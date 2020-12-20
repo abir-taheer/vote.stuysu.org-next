@@ -1,7 +1,7 @@
 import { ForbiddenError, ApolloError } from "apollo-server-micro";
 import getIdTokenPayload from "../../../utils/auth/getIdTokenPayload";
 import validatePayload from "../../../utils/auth/validatePayload";
-import User from "../../../models/user";
+import User from "../../../models/users";
 import generateJWT from "../../../utils/auth/generateJWT";
 
 export default async function (mutation, { idToken }, { signedIn }) {

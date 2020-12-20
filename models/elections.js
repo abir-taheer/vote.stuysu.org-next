@@ -8,14 +8,13 @@ const ElectionSchema = new Schema({
   start: Date,
   end: Date,
   // Public ID of the image
-  pictureId: {type: String},
-  complete: { type: Boolean, default: false }
+  pictureId: { type: String },
+  complete: { type: Boolean, default: false },
 });
 
 // --- Statics ---
-ElectionSchema.statics.getByStringId = id => {
-  const objectId = mongoose.Types.ObjectId(id);
-  return mongoose.model("Election").findById(objectId);
+ElectionSchema.statics.getByUrl = url => {
+  return mongoose.models.Elections.findOne({ url });
 };
 
 // --- Methods ---
@@ -24,6 +23,6 @@ ElectionSchema.methods.isVotingPeriod = function () {
   return this.start < now && this.end > now;
 };
 
-const Election = mongoose.model("Election", ElectionSchema);
+const Elections = mongoose.model("Elections", ElectionSchema);
 
-export default Election;
+export default Elections;

@@ -1,3 +1,5 @@
-import User from "../../../models/user";
+import User from "../../../models/users";
 
-export default (root, { id }) => User.getByStringId(id);
+export default (root, { id }) => {
+  return User.findById(id);
+};

@@ -10,14 +10,8 @@ const UserSchema = new Schema({
 });
 
 UserSchema.statics.getByEmail = email => {
-  return mongoose.model("User").findOne({ email });
+  return mongoose.models.Users.findOne({ email });
 };
 
-UserSchema.statics.getByStringId = id => {
-  const objectId = mongoose.Types.ObjectId(id);
-  return mongoose.model("User").findById(objectId);
-};
-
-const User = mongoose.model("User", UserSchema);
-
-export default User;
+const Users = mongoose.models.Users || mongoose.model("Users", UserSchema);
+export default Users;

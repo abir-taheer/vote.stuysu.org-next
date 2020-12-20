@@ -1,0 +1,1 @@
+export default resource => resource.created_at;
