@@ -1,1 +1,0 @@
-export default resource => resource.public_id;
