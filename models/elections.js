@@ -10,7 +10,7 @@ const ElectionSchema = new Schema({
   // Public ID of the image
   pictureId: { type: String },
   complete: { type: Boolean, default: false },
-  allowedGradYears: [Number]
+  allowedGradYears: [Number],
 });
 
 // --- Statics ---
@@ -24,6 +24,7 @@ ElectionSchema.methods.isVotingPeriod = function () {
   return this.start < now && this.end > now;
 };
 
-const Elections = mongoose.models.Elections || mongoose.model("Elections", ElectionSchema);
+const Elections =
+  mongoose.models.Elections || mongoose.model("Elections", ElectionSchema);
 
 export default Elections;

@@ -7,8 +7,8 @@ export default gql`
     url: String
     start: DateTime
     end: DateTime
-      allowedGradYears: [Int!]
+    allowedGradYears: [Int!]
     picture: CloudinaryResource
-      complete: Boolean
+    complete: Boolean
   }
 `;
