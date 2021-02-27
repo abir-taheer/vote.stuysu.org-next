@@ -1,7 +1,7 @@
 import url from "./url";
 
 const CloudinaryResource = {
-  url,
+    url,
 };
 
 export default CloudinaryResource;

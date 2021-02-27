@@ -1,7 +1,7 @@
 import picture from "./picture";
 
 const Election = {
-  picture,
+    picture,
 };
 
 export default Election;

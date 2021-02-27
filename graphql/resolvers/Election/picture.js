@@ -1,4 +1,4 @@
 import CloudinaryResources from "../../../models/cloudinaryResources";
 
 export default election =>
-  CloudinaryResources.idLoader.load(election.pictureId);
+    CloudinaryResources.idLoader.load(election.pictureId);

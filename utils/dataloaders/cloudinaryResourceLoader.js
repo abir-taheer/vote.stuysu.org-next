@@ -1,12 +1,13 @@
-import cloudinary from "cloudinary";
-import DataLoader from "dataloader";
+import cloudinary from 'cloudinary';
+import DataLoader from 'dataloader';
 
-async function batchLoader(publicIds) {
+async function batchLoaderFn(publicIds) {
     // Remove any duplicates
-    const ids = Array.from(new Set(publicIds));
+    const ids = [...new Set(publicIds)];
 
     const { resources } = await cloudinary.v2.api.resources_by_ids(ids, {
         max_results: ids.length,
+        tags: true,
     });
 
     const publicIdMap = {};
@@ -18,6 +19,8 @@ async function batchLoader(publicIds) {
     return publicIds.map(id => publicIdMap[id] || null);
 }
 
-const resourceDetailsLoader = new DataLoader(batchLoader, { cache: false });
+const cloudinaryResourceLoader = new DataLoader(batchLoaderFn, {
+    cache: false,
+});
 
-export default resourceDetailsLoader;
+export default cloudinaryResourceLoader;
